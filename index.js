@@ -4,7 +4,7 @@ const bot = new Discord.Client();
 const fs = require('fs');
 const blacklistUsers = "./blacklist.json"
 const badLinks = require("./badLinks.json") 
-
+const token = process.env.TOKEN;
 const AntiSpam = require('discord-anti-spam');
 const antiSpam = new AntiSpam({
     warnThreshold: 5, // Amount of messages sent in a row that will cause a warning.
@@ -280,4 +280,4 @@ bot.on("disconnect", function(event) {
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 
-bot.login(botconfig.token);
+bot.login(token);
